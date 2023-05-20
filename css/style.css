@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(18, 18, 28);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.header .logo {
+    font-size: 25Px;
+    font-weight: 600;
+    color: white;
+    cursor: default;
+    opacity: 0;
+    text-decoration: none;
+    animation: right 1s ease forwards;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 35px;
+    cursor: default;
+    transition: .4s ease;
+    opacity: 0;
+    animation: top 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+nav a:hover,
+nav a.active {
+    color: #0ef;
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70Px 10% 0;
+    color: white;
+}
+
+.hero-content {
+    max-width: 550Px;
+}
+
+.hero-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    animation: buttom .5s ease forwards;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 20px 0;
+    animation: right 1s ease forwards;
+}
+
+.hero-content p {
+    line-height: 1.8;
+}
+
+.hero-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: top .5s ease forwards;
+}
+
+.hero-content h3 span {
+    color: #0ef;
+}
+
+.hero-content .social {
+    margin: 30px 0;
+}
+
+.social a {
+    text-decoration: none;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 50%;
+    color: #0ef;
+    border: 2px solid #0ef;
+    transition: .4s ease;
+    margin-right: 15px;
+    box-shadow: 0 0 5px #0ef;
+    opacity: 0;
+    animation: lefta 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.btn {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    color: rgb(39, 38, 38);
+    background-color: #0ef;
+    font-weight: 600;
+    box-shadow: 0 0 10px #0ef;
+    animation: top .5s ease forwards;
+}
+
+img {
+    max-width: 450px;
+    opacity: 0;
+    animation: zoom 2s ease forwards, float 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
+}
+
+
+/*  **** animation */
+
+@keyframes right {
+    0% {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes lefta {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes top {
+    0% {
+        transform: translatey(150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes buttom {
+    0% {
+        transform: translatey(-150px);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
